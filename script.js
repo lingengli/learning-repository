@@ -1,15 +1,13 @@
 //插入略缩图列表
 function insertList(data) {
     var html = '';
-
-
     var box = document.getElementById("div4");
 
     for (var i = 0; i < data.length; i++) {
         var dataItem = data[i];
         html += '<div class="h5" id="item' + i + '">' +
-            '<a href="3.jpg" class="ph">' +
-            '	<img src="' + dataItem.thumb + '" alt="3"></img>' +
+            '<a href="img/3.jpg" class="ph">' +
+            '	<img src="'+ dataItem.thumb + '" alt="3">'+
             '</a>' +
             '<div class="decs">' + dataItem.title + '</div>' +
             '<div class="decs1">' + dataItem.subTitle + '</div>' +
@@ -297,28 +295,21 @@ var menuData = [
 
 menu(menuData);
 
-/**
- 点击赋予active
- 取消其他元素active
- **/
-function classA(id) {
-    //alert();
-    document.getElementById(id).setAttribute("class", "active");
-
-
-}
 
 function menu2(data) {
     var wz = '<ul>';
     var box = document.getElementById("div3");
-
     for (var i = 0; i < data.length; i++) {
         var menuItem = data[i];
-        wz += '<li>' + '<a href="#4" id="' + i + '" onclick="classA(this.id)">' + menuItem.title + '</a>' + '</li>';
+        wz += '<li>' + '<a href="#4" id=dav' + i + ' onclick="classA(this.id)" class="">' + menuItem.title + '</a>' + '</li>';
     }
     wz += '</ul>';
-
     box.innerHTML = wz;
+}
+
+function classA(id) {
+    document.getElementsByClassName('active').removeAttribute('class');
+    document.getElementById(id).setAttribute('class', 'active');
 }
 
 var menuData2 = [
@@ -335,4 +326,49 @@ var menuData2 = [
 
 menu2(menuData2);
 
+var articleList = [
+    {title: "设计中的留白", link: "http://www.baidu.com"},
+    {title: "《U1》01 - 不要再傻傻分不清楚", link: "http://www.baidu.com"},
+    {title: "10条建议打造更聪明的设计流程", link: "http://www.baidu.com"},
+    {title: "UI设计师应掌握的知识体系以及职业规划！", link: "http://www.baidu.com"},
+    {title: "2016年十个必须尝试的设计工具", link: "http://www.baidu.com"},
+    {title: "《U1》05 - 三年入职大公司", link: "http://www.baidu.com"},
+    {title: "《U1》04 - UI入门技能选择", link: "http://www.baidu.com"},
+    {title: "初识产品设计", link: "http://www.baidu.com"},
+    {title: "设计师该如何快速成长？", link: "http://www.baidu.com"},
+    {title: "合理利用对齐", link: "http://www.baidu.com"},
+    {title: "如何寻找设计灵感？写给刚入行的设计师", link: "http://www.baidu.com"},
+    {title: "《U1》06 - 抄袭别人，超越自己", link: "http://www.baidu.com"},
+    {title: "UI设计师们都快要失业了吗", link: "http://www.baidu.com"}
+]
 
+
+function insertLastArticleList(data) {
+    var html = "";
+
+    for (var i = 0; i < data.length; i++) {
+        html += '<li class="article-list-item">' +
+            '<a href="' + data[i].link + '">' + data[i].title + '</a>' +
+            '</li>';
+    }
+
+
+    var wrapper = document.getElementById("articleList");
+    if (wrapper != null) {
+        wrapper.innerHTML = html;
+    }
+
+}
+
+
+insertLastArticleList(articleList);
+
+
+function thumbListWrapper(data) {
+    var html='';
+    var box = document.getElementsByClassName('thumb-list-itme');
+}
+
+var
+
+thumbListWrapper(thumbList)

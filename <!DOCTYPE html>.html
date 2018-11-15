@@ -43,7 +43,7 @@
 
 		    <div class=hh9>
 					<a href="#1">
-					   <img src="3.jpg" alt="3"></img>
+					   <img src="img/3.jpg" alt="3"></img>
 					   <div class="h9-1">
 					       <button>经验观点</button>
 					       <div class="h9-2">无缝体验,电话智能</div>
@@ -54,7 +54,7 @@
 
 				<div class=hh9>
 					<a href="#1">
-					   <img src="3.jpg" alt="3"></img>
+					   <img src="img/3.jpg" alt="3"></img>
 					   <div class="h9-1">
 					       <button>经验观点</button>
 					       <div class="h9-2">无缝体验,电话智能</div>
@@ -65,7 +65,7 @@
 
 				<div class=hh9>
 					<a href="#1">
-					   <img src="3.jpg" alt="3"></img>
+					   <img src="img/3.jpg" alt="3"></img>
 					   <div class="h9-1">
 					       <button>经验观点</button>
 					       <div class="h9-2">无缝体验,电话智能</div>
@@ -73,3 +73,21 @@
 					   </div>
 					</a>
 			    </div>
+
+function menu2(data) {
+var wz = '<ul>';
+	var box = document.getElementById("div3");
+	for (var i = 0; i < data.length; i++) {
+	var menuItem = data[i];
+	wz += '<li>' + '<a href="#4" id="dav'+ i +'" >' + menuItem.title + '</a>' + '</li>';
+	var ali = document.getElementsByTagName("a");
+	ali[i].onclick = function () {
+	for (var i = 0; i < data.length; i++) {
+	ali[i].className = '';
+	}
+	this.className = 'active';
+	}
+	}
+	wz += '</ul>';
+box.innerHTML = wz;
+}
