@@ -71,50 +71,50 @@ var listData = [
         "title": "纪念碑谷-季节旅行",
         "subTitle": "季节旅行",
         "name": "纪念碑谷",
-        "thumb": "3.jpg"
+        "thumb": "img/3.jpg"
     },
     {
         "title": "纪念碑谷-季节旅行2",
         "subTitle": "季节旅行2",
         "name": "纪念碑谷2",
-        "thumb": "3.jpg"
+        "thumb": "img/3.jpg"
     },
     {
         "title": "纪念碑谷-季节旅行3",
         "subTitle": "季节旅行3",
         "name": "纪念碑谷3",
-        "thumb": "3.jpg"
+        "thumb": "img/3.jpg"
     },
     {
         "title": "纪念碑谷-季节旅行4",
         "subTitle": "季节旅行4",
         "name": "纪念碑谷4",
-        "thumb": "3.jpg"
+        "thumb": "img/3.jpg"
     },
     {
         "title": "纪念碑谷-季节旅行5",
         "subTitle": "季节旅行5",
         "name": "纪念碑谷5",
-        "thumb": "3.jpg"
+        "thumb": "img/3.jpg"
     },
     {
         "title": "纪念碑谷-季节旅行6",
         "subTitle": "季节旅行6",
         "name": "纪念碑谷6",
-        "thumb": "3.jpg"
+        "thumb": "img/3.jpg"
     },
     {
         "title": "纪念碑谷-季节旅行7",
         "subTitle": "季节旅行7",
         "name": "纪念碑谷7",
-        "thumb": "3.jpg"
+        "thumb": "img/3.jpg"
     },
     {
         "title": "纪念碑谷-季节旅行8",
         "subTitle": "季节旅行8",
         "name": "纪念碑谷8",
-        "thumb": "3.jpg"
-    },
+        "thumb": "img/3.jpg"
+    }
 ];
 
 var listData1 = [
@@ -122,25 +122,25 @@ var listData1 = [
         "title": "纪念碑谷-季节旅行1",
         "subTitle": "季节旅行",
         "name": "纪念碑谷",
-        "thumb": "3.jpg"
+        "thumb": "img/3.jpg"
     },
     {
         "title": "纪念碑谷-季节旅行1",
         "subTitle": "季节旅行",
         "name": "纪念碑谷",
-        "thumb": "3.jpg"
+        "thumb": "img/3.jpg"
     },
     {
         "title": "纪念碑谷-季节旅行1",
         "subTitle": "季节旅行",
         "name": "纪念碑谷",
-        "thumb": "3.jpg"
+        "thumb": "img/3.jpg"
     },
     {
         "title": "纪念碑谷-季节旅行1",
         "subTitle": "季节旅行",
         "name": "纪念碑谷",
-        "thumb": "3.jpg"
+        "thumb": "img/3.jpg"
     },
 ];
 
@@ -186,21 +186,47 @@ function insertArtcileList(data1) {
     box.innerHTML = html;
 }
 
+function insertPage1() {
+
+    var box = document.getElementById("div9");
+
+    var wrapper = document.createElement('div');
+    wrapper.setAttribute("class", "h6");
+
+    for (var i = 0; i <= 3; i++) {
+        var pageItem = document.createElement("a");
+        if (i == 0) {
+            pageItem.setAttribute("class", "active");
+        }
+        pageItem.setAttribute("href", "#" + i);
+        pageItem.setAttribute("onclick", "pageChage1(" + i + ")");
+        if (i == 3) {
+            pageItem.innerHTML = "···";
+        }
+        else {
+            pageItem.innerHTML = (i + 1);
+        }
+        wrapper.appendChild(pageItem);
+    }
+
+    box.appendChild(wrapper);
+}
+
 var ilData = [
     {
-        "thumb": "3.jpg",
+        "thumb": "img/3.jpg",
         "button": "经验观点",
         "title": "无缝体验,电话智能",
         "subTitle": "人工与智能混合服务,语音电话体验设计"
     },
     {
-        "thumb": "3.jpg",
+        "thumb": "img/3.jpg",
         "button": "经验观点",
         "title": "222222222",
         "subTitle": "人工与智能混合服务,语音电话体验设计"
     },
     {
-        "thumb": "3.jpg",
+        "thumb": "img/3.jpg",
         "button": "经验观点",
         "title": "333333333",
         "subTitle": "人工与智能混合服务,语音电话体验设计"
@@ -208,8 +234,7 @@ var ilData = [
 ];
 
 insertArtcileList(ilData);
-
-onclick = 'function (this.class)'
+insertPage1();
 
 function artcileChage(menu3) {
     var wz = "";
@@ -308,7 +333,7 @@ function menu2(data) {
 }
 
 function classA(id) {
-    document.getElementsByClassName('active').removeAttribute('class');
+
     document.getElementById(id).setAttribute('class', 'active');
 }
 
@@ -365,10 +390,61 @@ insertLastArticleList(articleList);
 
 
 function thumbListWrapper(data) {
-    var html='';
-    var box = document.getElementsByClassName('thumb-list-itme');
+    var html = "";
+    var box = document.getElementById("thumb1");
+    for(var i = 0; i<data.length; i++){
+        html +='<img src="'+ data[i].thumb +'" class="thumb-list-item">'
+    }
+    box.innerHTML = html;
 }
 
-var
+var thumbList = [
+    {
+        thumb : 'img/5.png'
+    },
+    {
+        thumb : 'img/6.png'
+    },
+    {
+        thumb : 'img/7.png'
+    }
+]
 
-thumbListWrapper(thumbList)
+thumbListWrapper(thumbList);
+
+
+
+function partner(data) {
+    var html = '';
+    var box = document.getElementById('partnerlogo');
+
+    for(var i=0 ; i<data.length; i++){
+        html += '<li>' +
+                    '<a href="#">' + '<img src="' + data[i].logo + '">' + '</a>' +
+                '</li>'
+    }
+    box.innerHTML = html;
+}
+
+var partnerlogo = [
+    {
+        logo: 'img/8.png'
+    },
+    {
+        logo: 'img/8.png'
+    },
+    {
+        logo: 'img/8.png'
+    },
+    {
+        logo: 'img/8.png'
+    },
+    {
+        logo: 'img/8.png'
+    },
+    {
+        logo: 'img/8.png'
+    }
+]
+
+partner(partnerlogo);

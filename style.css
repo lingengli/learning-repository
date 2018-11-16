@@ -523,7 +523,7 @@ body {
 
 .board-wrapper {
     display: block;
-    margin: 2rem auto;
+    margin: 2rem 0 0 0;
     min-height: 10rem;
     background: rgba(230, 230, 230, .4);
     text-align: center;
@@ -587,13 +587,43 @@ li.article-list-item a{
     display: inline-block;
     position: absolute;
     width: 38rem;
-    height:38rem;
-    margin: 0 0 0 -8.4rem;
+    height:37rem;
+    margin: 0 0 0 -8.7rem;
 }
 
-.thumb-list-itme{
+.thumb-list-item{
     width: 12.7rem;
     height: 36.3rem;
     margin: 0 0 0 -0.32rem;
 
+}
+
+.partner{
+    display: block;
+    background: rgb(230,230,230, .4);
+    text-align: center;
+}
+
+.partner1{
+    width: 60rem;
+    display: inline-block;
+    text-align: left;
+    font-size: 0.5rem;
+    list-style-type: none;
+}
+
+.partner1 li{
+    display: inline-block;
+}
+
+.footer{
+    display: block;
+    text-align: center;
+    margin: 1.5rem;
+}
+
+.footer1{
+    width: 60rem;
+    display: inline-block;
+    text-align: left;
 }
